@@ -6,7 +6,7 @@ use League\Pipeline\StageInterface;
 
 /**
  * Class TrimStringStage
- * @package ALehdet\ContentApi\Blog\Creator\Pipelines\Stages
+ * @package Digia\Sanitization\Stages
  */
 class TrimStringStage implements StageInterface
 {
