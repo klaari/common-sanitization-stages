@@ -4,9 +4,14 @@ sudo: false
 php:
   - 7.1
   - 7.2
+  
+env:
+  matrix:
+    - PREFER_LOWEST="--prefer-lowest"
+    - PREFER_LOWEST=""
 
 before_script:
-  - composer install
+  - composer update $PREFER_LOWEST
 
 script:
   - composer test
