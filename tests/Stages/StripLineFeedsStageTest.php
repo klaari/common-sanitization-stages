@@ -14,12 +14,11 @@ class StripLineFeedsStageTest extends TestCase
 
     public function testStage()
     {
-        $actualLineFeeds  = "This sentence has\ntwo lines";
-        $literalLineFeeds = 'This sentence\n\n is just weird';
+        $actualLineFeeds = "This sentence has\ntwo lines";
+        $this->assertEquals('This sentence hastwo lines', (new StripLineFeedsStage())($actualLineFeeds));
 
-        $stage = new StripLineFeedsStage();
-
-        $this->assertEquals('This sentence hastwo lines', $stage($actualLineFeeds));
-        $this->assertEquals('This sentence is just weird', $stage($literalLineFeeds));
+        $literalLineFeeds = 'This sentence\nis just weird\nokay';
+        $this->assertEquals('This sentence is just weird okay',
+            (new StripLineFeedsStage(["\n", '\n'], true))($literalLineFeeds));
     }
 }
