@@ -1,6 +1,6 @@
 {
     "name": "digiaonline/common-sanitization-stages",
-    "description": "A collection pipeline stages that are commonly needed when sanitizing data",
+    "description": "A collection of pipeline stages that are commonly needed when sanitizing data",
     "type": "library",
     "license": "MIT",
     "authors": [
